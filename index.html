@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html>
@@ -8,6 +7,7 @@
     </head>
     <body>
 
+
     <!--
 -->
 
@@ -16,10 +16,14 @@
           <label for="mySelect">Wybierz samochód do odczytania pliku:</label><br>
           <select name="samochod" id="mySelect">
               <option value="Puste pole">Puste pole</option>
-            <option value="test1" data-image="{{ url_for('static', filename='test1.png') }}">Test 1</option>
-            <option value="test2" data-image="{{ url_for('static', filename='test2.png') }}">Test 2</option>
-            <option value="test3" data-image="{{ url_for('static', filename='test3.png') }}">Test 3</option>
-            <option value="test4" data-image="{{ url_for('static', filename='test4.png') }}">Test 4</option>
+              <option value="test1" data-image="{{ url_for('static', filename='test1.png') }}">Test 1</option>
+              <option value="test2" data-image="{{ url_for('static', filename='test2.png') }}">Test 2</option>
+              <option value="test3" data-image="{{ url_for('static', filename='test3.png') }}">Test 3</option>
+              <option value="test4" data-image="{{ url_for('static', filename='test4.png') }}">Test 4</option>
+              <option value="test5" data-image="{{ url_for('static', filename='test5.png') }}">Test 5</option>
+              <option value="test6" data-image="{{ url_for('static', filename='test6.png') }}">Test 6</option>
+              <option value="test7" data-image="{{ url_for('static', filename='test7.png') }}">Test 7</option>
+              <option value="test8" data-image="{{ url_for('static', filename='test8.png') }}">Test 8</option>
           </select>
             <input type="submit" value="Wyślij">
             </form>

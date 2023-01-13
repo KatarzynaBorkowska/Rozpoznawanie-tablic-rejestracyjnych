@@ -7,10 +7,7 @@ import cv2
 import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import train_test_split
-import plotly.express as px
-import pytesseract as pt
 
-'''
 
 path = glob('../pythonProject/archive/annotations/*.xml')
 labels_dict = dict(filepath=[], xmin=[], xmax=[], ymin=[], ymax=[])
@@ -96,58 +93,7 @@ model.compile(loss='mse',optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4))
 model.summary()
 
 tfb = tf.keras.callbacks.TensorBoard('object_detection')
-history = model.fit(x=x_train,y=y_train,batch_size=12,epochs=300,
+history = model.fit(x=x_train,y=y_train,batch_size=7,epochs=165,
                     validation_data=(x_test,y_test),callbacks=[tfb])
 
 model.save('./object_detection.h5')
-'''
-model = tf.keras.models.load_model('./object_detection.h5')
-
-
-
-def object_detection(path):
-
-    image = tf.keras.utils.load_img(path)
-    image = np.array(image, dtype=np.uint8)
-    image1 = tf.keras.utils.load_img(path, target_size=(224, 224))
-
-
-    image_arr_224 = img_to_array(image1) / 255.0
-    h, w, d = image.shape
-    test_arr = image_arr_224.reshape(1, 224, 224, 3)
-
-
-    coords = model.predict(test_arr)
-
-
-    denorm = np.array([w, w, h, h])
-    coords = coords * denorm
-    coords = coords.astype(np.int32)
-
-
-    xmin, xmax, ymin, ymax = coords[0]
-    pt1 = (xmin, ymin)
-    pt2 = (xmax, ymax)
-
-
-    cv2.rectangle(image, pt1, pt2, (0, 255, 0), 3)
-    return image, coords
-
-
-path2 = glob('../pythonProject/test/test*.png')
-for path in path2:
-    image, cods = object_detection(path)
-
-
-    img = np.array(tf.keras.utils.load_img(path))
-    xmin ,xmax,ymin,ymax = cods[0]
-    roi = img[ymin:ymax, xmin:xmax]
-
-
-    text = pt.image_to_string(roi)
-    print(path)
-    print(text)
-    cv2.imshow("zdj", image)
-    cv2.imshow("zdj", roi)
-    cv2.waitKey()
-
