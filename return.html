@@ -5,11 +5,15 @@
         <title>Powrót</title>
     </head>
     <body>
-        <form action="" method="GET">
-            <input type="submit" value="Wróć do strony głównej">
-        </form>
+        <form action="/" method="GET">
+    <input type="submit" value="Wróć do strony głównej">
+</form>
         <div>
-            <img src="/static/image.jpg">
+            <img src="{{ url_for('static', filename= 'test.png')}}" alt="uploaded image" width="400" height="300">
+            <p>Nazwa przesłanego pliku: {{ file_name }}</p>
+        </div>
+        <div>
+            <img src="/static/image.jpg" width="150" height="50">
         </div>
         <div>
             {{text}}

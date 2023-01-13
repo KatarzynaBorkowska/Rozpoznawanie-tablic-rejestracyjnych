@@ -1,3 +1,6 @@
+import os
+import shutil
+
 from flask import Flask, request, render_template
 from glob import glob
 from keras.utils import img_to_array
@@ -42,12 +45,33 @@ def object_detection(path):
     return image, coords
 
 
-@app.route('/')
-def index():
+
+
+@app.route('/', methods=['GET'])
+def back_to_index():
     return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
+@app.route('/zdjecie_z_komputera', methods=['POST'])
+def upload_file():
+    file = request.files['file']
+    file.save('../pythonProject/static/test.png')
+    path = '../pythonProject/static/test.png'
+    path2 = glob(path)
+    print(path2)
+    for path in path2:
+        image, cods = object_detection(path)
+        img = np.array(tf.keras.utils.load_img(path))
+        xmin, xmax, ymin, ymax = cods[0]
+        roi = img[ymin:ymax, xmin:xmax]
+
+        text = pt.image_to_string(roi)
+        imsave('static/image.jpg', roi)
+
+    # Wyrenderuj szablon z przyciskiem powrotu
+    return render_template('return.html', text=text, file_name=file.filename)
+
+@app.route('/zdjecie_z_systemu', methods=['POST'])
 def index_post():
     # Pobierz dane przesłane z formularza
     form_data = request.form['samochod']
@@ -61,12 +85,11 @@ def index_post():
         roi = img[ymin:ymax, xmin:xmax]
 
         text = pt.image_to_string(roi)
-        print(path)
         imsave('static/image.jpg', roi)
-        print(text)
-
+    # Skopiuj plik przed zmianą jego nazwy
+    shutil.copy(path, '../pythonProject/static/test.png')
     # Wyrenderuj szablon z przyciskiem powrotu
-    return render_template('return.html', text = text)
+    return render_template('return.html', text = text,image_name='test.png')
 
 
 

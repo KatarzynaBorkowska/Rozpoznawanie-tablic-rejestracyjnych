@@ -10,10 +10,18 @@
 
     <!--
 -->
+    <div>
+        <form action="/zdjecie_z_komputera" method="post" enctype="multipart/form-data">
+            <label>Tutaj możesz umieścić plik z komputera</label><br>
+          <input type="file" name="file">
+          <input type="submit" value="Upload">
+        </form>
 
+    </div>
+    <br> <br>
      <div>
-        <form action="" method="POST">
-          <label for="mySelect">Wybierz samochód do odczytania pliku:</label><br>
+        <form action="/zdjecie_z_systemu" method="POST">
+          <label for="mySelect">Wybierz samochód do odczytania z pliku:</label><br>
           <select name="samochod" id="mySelect">
               <option value="Puste pole">Puste pole</option>
               <option value="test1" data-image="{{ url_for('static', filename='test1.png') }}">Test 1</option>
@@ -29,7 +37,7 @@
             </form>
     </div>
     <div>
-    Tutaj umieść kod JavaScript
+
     <script>
         // Pobierz element select
           var select = document.getElementById("mySelect");
@@ -60,5 +68,6 @@
           }
     </script>
 </div>
+
     </body>
 </html>
