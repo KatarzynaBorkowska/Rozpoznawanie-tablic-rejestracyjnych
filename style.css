@@ -1,0 +1,152 @@
+:root {
+  --blue: #58eded; /* zmienne zapisujące kolor */
+  --dark: #1b1b1b;
+}
+
+* { /* resetowanie strony jaj wymiarów, marginesów itp. */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw; /* wypełnienie w 100%*/
+  height: 100vh;
+  align-items: center;
+  background: var(--green);
+  background: linear-gradient(
+    to right top,
+    var(--dark),
+    var(--blue)
+  ); /*ombre*/
+  overflow: hidden; /* nie pojawiaja sie scrole*/
+  display: flex; /* wysrodkowanie */
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  flex-wrap: wrap;
+}
+
+.szklo{
+  width: 66%;
+  height: 66%;
+  background: rgba(0, 0, 0, 0.75);
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.25)
+  );
+  padding: 32px 92px;
+  border-radius: 20px;
+  position: relative;
+  backdrop-filter: blur(5px); /* rozmycie */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+h1{
+    padding-bottom: 12px;
+    font-size: 48px;
+}
+
+.myButton {
+   width: 100px;
+   margin-top: 32px;
+   padding: 16px 0;
+   front-size: 42px;
+   front-weight: 700;
+   color: #fff;
+   background: var(--blue);
+   background: linear-gradient(
+    to right top,
+    var(--blue),
+    rgba(255, 255, 255, 0.6)
+  );
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+   border-radius: 10px;
+   float: right;
+}
+
+.myButton2 {
+   width: 100px;
+   margin-top: 32px;
+   padding: 16px 0;
+   front-size: 42px;
+   front-weight: 700;
+   color: #fff;
+   background: var(--blue);
+   background: linear-gradient(
+    to right top,
+    var(--blue),
+    rgba(255, 255, 255, 0.6)
+  );
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+   border-radius: 10px;
+   float: right;
+}
+
+.myButton2:focus{
+    outline-color: #fff;
+}
+
+.myButton2:after {
+    width: 20px;
+    height: 150%;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(20deg);
+    transition: transform 0.5s;
+
+}
+.myButton2:hover:after{
+    transform: translateX(200px) rotate(20deg);
+}
+
+.myButton:after {
+    width: 20px;
+    height: 150%;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(20deg);
+    transition: transform 0.5s;
+}
+.myButton:hover:after{
+    transform: translateX(200px) rotate(20deg);
+}
+
+
+
+.komputera{
+        padding-bottom: 12px;
+    font-size: 48px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  width: 300px;
+  margin-top: 32px;
+  padding: 16px 0;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  background: linear-gradient(
+    to right top,
+    var(--blue),
+    rgba(255, 255, 255, 0.6)
+  );
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+

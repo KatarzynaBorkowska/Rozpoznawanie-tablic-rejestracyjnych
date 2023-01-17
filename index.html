@@ -3,23 +3,35 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <h1>Rozpoznawanie rejestracji ze zdjecia</h1>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,500;1,300;1,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
+    <div class="szklo">
 
+        <h1>Rozpoznawanie rejestracji ze zdjecia</h1>
 
     <!--
 -->
-    <div>
-        <form action="/zdjecie_z_komputera" method="post" enctype="multipart/form-data">
-            <label>Tutaj możesz umieścić plik z komputera</label><br>
-          <input type="file" name="file">
-          <input type="submit" value="Upload">
-        </form>
+        <main>
 
+        </main>
+    <div>
+        <p1>
+        <form action="/zdjecie_z_komputera" method="post" enctype="multipart/form-data">
+            <label class="komputera">Tutaj możesz umieścić plik z komputera</label><br>
+          <input type="file" name="file">
+          <button type="submit" class="myButton">Wyślij</button>
+        </form>
+</p1>
     </div>
     <br> <br>
      <div>
+         <p2>
+
+         </p2>
         <form action="/zdjecie_z_systemu" method="POST">
           <label for="mySelect">Wybierz samochód do odczytania z pliku:</label><br>
           <select name="samochod" id="mySelect">
@@ -33,11 +45,41 @@
               <option value="test7" data-image="{{ url_for('static', filename='test7.png') }}">Test 7</option>
               <option value="test8" data-image="{{ url_for('static', filename='test8.png') }}">Test 8</option>
           </select>
-            <input type="submit" value="Wyślij">
-            </form>
-    </div>
-    <div>
 
+            <button type="submit" class="myButton2">Wyślij</button>
+            </form>
+         </p2>
+    </div>
+        </main>
+    <div>
+<script>
+  // Pobierz przycisk submit
+  var submitButton = document.querySelector("input[type='submit']");
+
+  // Pobierz pole pliku
+  var fileInput = document.querySelector("input[type='file']");
+
+  // Dodaj obsługę zdarzenia click dla przycisku submit
+  submitButton.addEventListener("click", function(event) {
+    // Sprawdź czy plik został wybrany
+    if (!fileInput.value) {
+      // Zablokuj wysłanie formularza
+      event.preventDefault();
+      alert("Proszę wybrać plik!");
+    }
+  });
+</script>
+<script>
+    var myButton = document.querySelector(".myButton2");
+    myButton.addEventListener("click", function(event){
+        var select = document.getElementById("mySelect");
+        var selectedOption = select.options[select.selectedIndex];
+        if(selectedOption.value == "Puste pole"){
+            event.preventDefault();
+            alert("Wybierz samochód z listy!");
+        }
+    });
+</script>
     <script>
         // Pobierz element select
           var select = document.getElementById("mySelect");
@@ -64,10 +106,19 @@
             img.id = "obrazek";
 
             // Umieść obraz na stronie
-            document.body.appendChild(img);
+            if (selectedOption.value != "Puste pole") {
+                // Twórz element img z odpowiednim atrybutem src
+                var img = document.createElement("img");
+                img.src = imageUrl;
+                img.id = "obrazek";
+
+                // Umieść obraz na stronie
+                document.querySelector('.szklo').appendChild(img);
+            }
+
           }
     </script>
 </div>
-
+</div>
     </body>
 </html>
