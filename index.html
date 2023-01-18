@@ -5,10 +5,15 @@
         <meta charset="UTF-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,500;1,300;1,600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
+
+    <div class = "bg">
+        <img src="{{ url_for('static', filename= 'car.png')}}" alt="uploaded image" class="bg__img" width="400" height="300">
+
+    </div>
     <div class="szklo">
 
         <h1>Rozpoznawanie rejestracji ze zdjecia</h1>
@@ -18,22 +23,21 @@
         <main>
 
         </main>
-    <div>
+    <div id = "left-section">
         <p1>
         <form action="/zdjecie_z_komputera" method="post" enctype="multipart/form-data">
             <label class="komputera">Tutaj możesz umieścić plik z komputera</label><br>
           <input type="file" name="file">
           <button type="submit" class="myButton">Wyślij</button>
         </form>
-</p1>
-    </div>
-    <br> <br>
-     <div>
+        </p1>
+<br>
+
          <p2>
 
          </p2>
         <form action="/zdjecie_z_systemu" method="POST">
-          <label for="mySelect">Wybierz samochód do odczytania z pliku:</label><br>
+          <label for="mySelect" class="komputera">Wybierz samochód do odczytania z pliku:</label><br>
           <select name="samochod" id="mySelect">
               <option value="Puste pole">Puste pole</option>
               <option value="test1" data-image="{{ url_for('static', filename='test1.png') }}">Test 1</option>
@@ -53,21 +57,14 @@
         </main>
     <div>
 <script>
-  // Pobierz przycisk submit
-  var submitButton = document.querySelector("input[type='submit']");
-
-  // Pobierz pole pliku
-  var fileInput = document.querySelector("input[type='file']");
-
-  // Dodaj obsługę zdarzenia click dla przycisku submit
-  submitButton.addEventListener("click", function(event) {
-    // Sprawdź czy plik został wybrany
-    if (!fileInput.value) {
-      // Zablokuj wysłanie formularza
-      event.preventDefault();
-      alert("Proszę wybrać plik!");
-    }
-  });
+    var myButton = document.querySelector(".myButton");
+    myButton.addEventListener("click", function(event){
+        var fileInput = document.querySelector("input[type='file']");
+        if(fileInput.files.length == 0){
+            event.preventDefault();
+            alert("Wybierz plik z komputera!");
+        }
+    });
 </script>
 <script>
     var myButton = document.querySelector(".myButton2");
@@ -80,6 +77,7 @@
         }
     });
 </script>
+        <div id = "right-section">
     <script>
         // Pobierz element select
           var select = document.getElementById("mySelect");
@@ -115,9 +113,9 @@
                 // Umieść obraz na stronie
                 document.querySelector('.szklo').appendChild(img);
             }
-
           }
     </script>
+            </div>
 </div>
 </div>
     </body>

@@ -7,9 +7,7 @@
     </head>
     <body>
     <div class="szklo">
-        <form action="/" method="GET">
-    <input type="submit" value="Wróć do strony głównej">
-</form>
+
         <div>
             <img src="{{ url_for('static', filename= 'test.png')}}" alt="uploaded image" width="400" height="300">
             <p>Nazwa przesłanego pliku: {{ file_name }}</p>
@@ -20,6 +18,9 @@
         <div>
             {{text}}
         </div>
+                <form action="/" method="GET">
+    <input type="submit" class="strona2" value="Wróć do strony głównej">
+</form>
     </div>
 
     </body>

@@ -23,9 +23,20 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   flex-wrap: wrap;
 }
+
+h1{
+    padding-bottom: 12px;
+    font-size: 48px;
+}
+
+p1{
+    font-size: 2px;
+
+}
+
 
 .szklo{
   width: 66%;
@@ -43,10 +54,7 @@ body {
   -webkit-backdrop-filter: blur(5px);
 }
 
-h1{
-    padding-bottom: 12px;
-    font-size: 48px;
-}
+
 
 .myButton {
    width: 100px;
@@ -128,16 +136,16 @@ h1{
 
 
 .komputera{
-        padding-bottom: 12px;
-    font-size: 48px;
+    padding-bottom: 12px;
+    font-size: 24px;
 }
 
 input[type="file"]::-webkit-file-upload-button {
-  width: 300px;
-  margin-top: 32px;
-  padding: 16px 0;
-  font-size: 42px;
-  font-weight: 700;
+   width: 100px;
+   margin-top: 32px;
+   padding: 16px 0;
+   front-size: 42px;
+   front-weight: 700;
   color: #fff;
   background: var(--blue);
   background: linear-gradient(
@@ -150,3 +158,79 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 10px;
 }
 
+
+#left-section {
+    float: left;
+    width: 50%;
+}
+
+#right-section {
+    text-align: center; /* wyśrodkowanie elementów wewnątrz diva */
+    width: 300px; /* ustawienie szerokości diva */
+    height: 300px; /* ustawienie wysokości diva */
+}
+
+#obrazek {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 40%;
+    max-width: 100%; /* ustawienie maksymalnej szerokości */
+    border: solid 1px #ccc; /* dodanie obramowania */
+    padding: 10px; /* dodanie odstępu wewnątrz elementu */
+    display: flex; /* wyśrodkowanie elementu */
+    justify-content: center; /* wyśrodkowanie elementu */
+    left: 425px;
+}
+
+#mySelect {
+   width: 100px;
+   margin-top: 32px;
+   padding: 16px 0;
+   front-size: 42px;
+   front-weight: 700;
+   color: #fff;
+   background: var(--blue);
+   background: linear-gradient(
+    to right top,
+    var(--blue),
+    rgba(255, 255, 255, 0.6)
+  );
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+   border-radius: 10px;
+}
+
+.bg__img{
+    position: absolute;
+    left: 0;
+    top: 590px;
+    animation: ruch 5s linear infinite;
+}
+
+@keyframes ruch{
+    from { transform: translateX(-30vw) }
+    to {transform: translateX(100vw)}
+}
+
+
+.strona2 {
+   width: 150px;
+   margin-top: 32px;
+   padding: 16px 0;
+   front-size: 42px;
+   front-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  background: linear-gradient(
+    to right top,
+    var(--blue),
+    rgba(255, 255, 255, 0.6)
+  );
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
