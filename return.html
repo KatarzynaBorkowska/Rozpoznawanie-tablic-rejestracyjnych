@@ -6,16 +6,24 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-    <div class="szklo">
+    <div class="szklo" class="container">
 
-        <div>
-            <img src="{{ url_for('static', filename= 'test.png')}}" alt="uploaded image" width="400" height="300">
-            <p>Nazwa przesłanego pliku: {{ file_name }}</p>
+        <div class="left-half">
+
+
+        <div class = "samochod2">
+            <img src="{{ url_for('static', filename= 'test.png')}}" alt="uploaded image">
         </div>
         <div>
-            <img src="/static/image.jpg" width="150" height="50">
+            <p3>Nazwa przesłanego pliku: {{ file_name }}</p3>
         </div>
-        <div>
+</div>
+
+        <div class="right-half">
+            <div class="rejestracja">
+                <img src="/static/image.jpg">
+            </div>
+
             {{text}}
         </div>
                 <form action="/" method="GET">

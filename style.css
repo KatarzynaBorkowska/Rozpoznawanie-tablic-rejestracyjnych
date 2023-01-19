@@ -185,23 +185,25 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 #mySelect {
-   width: 100px;
-   margin-top: 32px;
-   padding: 16px 0;
-   front-size: 42px;
-   front-weight: 700;
-   color: #fff;
-   background: var(--blue);
-   background: linear-gradient(
+
+    text-align: center;
+    width: 100px;
+    margin-top: 32px;
+    padding: 16px 0;
+    front-size: 42px;
+    front-weight: 700;
+    color: #fff;
+    background: var(--blue);
+    background: linear-gradient(
     to right top,
     var(--blue),
     rgba(255, 255, 255, 0.6)
-  );
-  border: none;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-   border-radius: 10px;
+    );
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .bg__img{
@@ -218,19 +220,68 @@ input[type="file"]::-webkit-file-upload-button {
 
 
 .strona2 {
-   width: 150px;
+   position: absolute;
+   right: 20px;
+   bottom: 20px;
+   width: 250px;
    margin-top: 32px;
    padding: 16px 0;
-   front-size: 42px;
-   front-weight: 700;
-  color: #fff;
-  background: var(--blue);
-  background: linear-gradient(
-    to right top,
-    var(--blue),
-    rgba(255, 255, 255, 0.6)
-  );
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
+   font-size: 20px;
+   font-weight: 700;
+   color: #fff;
+   background: var(--blue);
+   background: linear-gradient(
+     to right top,
+     var(--blue),
+     rgba(255, 255, 255, 0.6)
+   );
+   border: none;
+   cursor: pointer;
+   border-radius: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.left-half {
+  width: 50%;
+  float: left;
+}
+
+.right-half {
+  width: 50%;
+  float: right;
+}
+
+.samochod2 {
+    position: relative;
+}
+
+.samochod2 img {
+    position: absolute;
+    left: 20px;
+    top: 200px;
+    transform: translate(-50%, -50%);
+    transform: scale(1.5);
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+
+.rejestracja {
+    position: absolute;
+    left: 720px;
+    top: 200px;
+    transform: translate(-50%, -50%);
+    transform: scale(1);
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+p3{
+position: absolute; bottom: 0; left: 20px;
+font-size: 20px;
 }
