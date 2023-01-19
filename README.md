@@ -1,1 +1,1 @@
-# Rozpoznawanie-tablic-rejestracyjnych
+# Rozpoznawanie tablic rejestracyjnych ze zdjęcia
