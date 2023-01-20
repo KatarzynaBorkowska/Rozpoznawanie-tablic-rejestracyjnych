@@ -12,7 +12,7 @@ from matplotlib.pyplot import imsave
 
 app = Flask(__name__)
 
-model = tf.keras.models.load_model('./object_detection.h5')
+model = tf.keras.models.load_model('./object_detection_10_150.h5')
 
 
 
