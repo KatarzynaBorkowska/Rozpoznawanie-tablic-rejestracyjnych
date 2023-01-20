@@ -3,7 +3,8 @@
   --dark: #1b1b1b;
 }
 
-* { /* resetowanie strony jaj wymiarów, marginesów itp. */
+* {
+  /* resetowanie strony jaj wymiarów, marginesów itp. */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,32 +14,22 @@ body {
   height: 100vh;
   align-items: center;
   background: var(--green);
-  background: linear-gradient(
-    to right top,
-    var(--dark),
-    var(--blue)
-  ); /*ombre*/
+  background: linear-gradient(to right top, var(--dark), var(--blue)); /*ombre*/
   overflow: hidden; /* nie pojawiaja sie scrole*/
   display: flex; /* wysrodkowanie */
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   flex-wrap: wrap;
 }
 
-h1{
-    padding-bottom: 12px;
-    font-size: 48px;
+h1 {
+  padding-bottom: 12px;
+  font-size: 48px;
 }
 
-p1{
-    font-size: 2px;
-
-}
-
-
-.szklo{
+.szklo {
   width: 66%;
   height: 66%;
   background: rgba(0, 0, 0, 0.75);
@@ -54,17 +45,15 @@ p1{
   -webkit-backdrop-filter: blur(5px);
 }
 
-
-
 .myButton {
-   width: 100px;
-   margin-top: 32px;
-   padding: 16px 0;
-   front-size: 42px;
-   front-weight: 700;
-   color: #fff;
-   background: var(--blue);
-   background: linear-gradient(
+  width: 100px;
+  margin-top: 32px;
+  padding: 16px 0;
+  front-size: 42px;
+  front-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  background: linear-gradient(
     to right top,
     var(--blue),
     rgba(255, 255, 255, 0.6)
@@ -73,19 +62,19 @@ p1{
   position: relative;
   cursor: pointer;
   overflow: hidden;
-   border-radius: 10px;
-   float: right;
+  border-radius: 10px;
+  float: right;
 }
 
 .myButton2 {
-   width: 100px;
-   margin-top: 32px;
-   padding: 16px 0;
-   front-size: 42px;
-   front-weight: 700;
-   color: #fff;
-   background: var(--blue);
-   background: linear-gradient(
+  width: 100px;
+  margin-top: 32px;
+  padding: 16px 0;
+  front-size: 42px;
+  front-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  background: linear-gradient(
     to right top,
     var(--blue),
     rgba(255, 255, 255, 0.6)
@@ -94,58 +83,55 @@ p1{
   position: relative;
   cursor: pointer;
   overflow: hidden;
-   border-radius: 10px;
-   float: right;
+  border-radius: 10px;
+  float: right;
 }
 
-.myButton2:focus{
-    outline-color: #fff;
+.myButton2:focus {
+  outline-color: #fff;
 }
 
 .myButton2:after {
-    width: 20px;
-    height: 150%;
-    position: absolute;
-    left: -15px;
-    top: -15px;
-    content: "";
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: rotate(20deg);
-    transition: transform 0.5s;
-
+  width: 20px;
+  height: 150%;
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(20deg);
+  transition: transform 0.5s;
 }
-.myButton2:hover:after{
-    transform: translateX(200px) rotate(20deg);
+.myButton2:hover:after {
+  transform: translateX(200px) rotate(20deg);
 }
 
 .myButton:after {
-    width: 20px;
-    height: 150%;
-    position: absolute;
-    left: -15px;
-    top: -15px;
-    content: "";
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: rotate(20deg);
-    transition: transform 0.5s;
+  width: 20px;
+  height: 150%;
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: rotate(20deg);
+  transition: transform 0.5s;
 }
-.myButton:hover:after{
-    transform: translateX(200px) rotate(20deg);
+.myButton:hover:after {
+  transform: translateX(200px) rotate(20deg);
 }
 
-
-
-.komputera{
-    padding-bottom: 12px;
-    font-size: 24px;
+.komputera {
+  padding-bottom: 12px;
+  font-size: 24px;
 }
 
 input[type="file"]::-webkit-file-upload-button {
-   width: 100px;
-   margin-top: 32px;
-   padding: 16px 0;
-   front-size: 42px;
-   front-weight: 700;
+  width: 100px;
+  margin-top: 32px;
+  padding: 16px 0;
+  front-size: 42px;
+  front-weight: 700;
   color: #fff;
   background: var(--blue);
   background: linear-gradient(
@@ -158,130 +144,131 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 10px;
 }
 
-
 #left-section {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 #right-section {
-    text-align: center; /* wyśrodkowanie elementów wewnątrz diva */
-    width: 300px; /* ustawienie szerokości diva */
-    height: 300px; /* ustawienie wysokości diva */
+  text-align: center; /* wyśrodkowanie elementów wewnątrz diva */
+  width: 300px; /* ustawienie szerokości diva */
+  height: 300px; /* ustawienie wysokości diva */
 }
 
 #obrazek {
-    position: absolute;
-    right: 50%;
-    top: 50%;
-    transform: translate(50%, -50%);
-    width: 40%;
-    max-width: 100%; /* ustawienie maksymalnej szerokości */
-    border: solid 1px #ccc; /* dodanie obramowania */
-    padding: 10px; /* dodanie odstępu wewnątrz elementu */
-    display: flex; /* wyśrodkowanie elementu */
-    justify-content: center; /* wyśrodkowanie elementu */
-    left: 425px;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 40%;
+  max-width: 100%; /* ustawienie maksymalnej szerokości */
+  border: solid 1px #ccc; /* dodanie obramowania */
+  padding: 10px; /* dodanie odstępu wewnątrz elementu */
+  display: flex; /* wyśrodkowanie elementu */
+  justify-content: center; /* wyśrodkowanie elementu */
+  left: 425px;
 }
 
 #mySelect {
-
-    text-align: center;
-    width: 100px;
-    margin-top: 32px;
-    padding: 16px 0;
-    front-size: 42px;
-    front-weight: 700;
-    color: #fff;
-    background: var(--blue);
-    background: linear-gradient(
+  text-align: center;
+  width: 100px;
+  margin-top: 32px;
+  padding: 16px 0;
+  front-size: 42px;
+  front-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  background: linear-gradient(
     to right top,
     var(--blue),
     rgba(255, 255, 255, 0.6)
-    );
-    border: none;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 10px;
+  );
+  border: none;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.bg__img{
-    position: absolute;
-    left: 0;
-    top: 590px;
-    animation: ruch 5s linear infinite;
+.bg__img {
+  position: absolute;
+  left: 0;
+  top: 590px;
+  animation: ruch 5s linear infinite;
 }
 
-@keyframes ruch{
-    from { transform: translateX(-30vw) }
-    to {transform: translateX(100vw)}
+@keyframes ruch {
+  from {
+    transform: translateX(-30vw);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
 
-
-.strona2 {
-   position: absolute;
-   right: 20px;
-   bottom: 20px;
-   width: 250px;
-   margin-top: 32px;
-   padding: 16px 0;
-   font-size: 20px;
-   font-weight: 700;
-   color: #fff;
-   background: var(--blue);
-   background: linear-gradient(
-     to right top,
-     var(--blue),
-     rgba(255, 255, 255, 0.6)
-   );
-   border: none;
-   cursor: pointer;
-   border-radius: 10px;
+.przyciskNaStronie2 {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 250px;
+  margin-top: 32px;
+  padding: 16px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--blue);
+  background: linear-gradient(
+    to right top,
+    var(--blue),
+    rgba(255, 255, 255, 0.6)
+  );
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
-.container {
-  display: flex;
+#samochod2 {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 40%;
+  max-width: 100%; /* ustawienie maksymalnej szerokości */
+  border: solid 1px #ccc; /* dodanie obramowania */
+  padding: 10px; /* dodanie odstępu wewnątrz elementu */
+  display: flex; /* wyśrodkowanie elementu */
+  justify-content: center; /* wyśrodkowanie elementu */
+  left: -150px;
 }
 
-.left-half {
-  width: 50%;
-  float: left;
+#left-section2 {
+  text-align: center; /* wyśrodkowanie elementów wewnątrz diva */
+  width: 0px; /* ustawienie szerokości diva */
+  height: 300px; /* ustawienie wysokości diva */
 }
 
-.right-half {
-  width: 50%;
+#right-section2 {
   float: right;
+  width: 50%;
 }
 
-.samochod2 {
-    position: relative;
+#rejstracja {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 40%;
+  max-width: 100%; /* ustawienie maksymalnej szerokości */
+  border: solid 1px #ccc; /* dodanie obramowania */
+  padding: 10px; /* dodanie odstępu wewnątrz elementu */
+  display: flex; /* wyśrodkowanie elementu */
+  justify-content: center; /* wyśrodkowanie elementu */
+  left: 425px;
 }
 
-.samochod2 img {
-    position: absolute;
-    left: 20px;
-    top: 200px;
-    transform: translate(-50%, -50%);
-    transform: scale(1.5);
-    max-width: 100%;
-    max-height: 200px;
-    object-fit: contain;
-}
-
-
-.rejestracja {
-    position: absolute;
-    left: 720px;
-    top: 200px;
-    transform: translate(-50%, -50%);
-    transform: scale(1);
-    max-width: 100%;
-    max-height: 200px;
-    object-fit: contain;
-}
-
-p3{
-position: absolute; bottom: 0; left: 20px;
-font-size: 20px;
+p4 {
+  border: solid 1px #ccc; /* dodanie obramowania */
+  padding: 10px; /* dodanie odstępu wewnątrz elementu */
+  display: flex; /* wyśrodkowanie elementu */
+  justify-content: center; /* wyśrodkowanie elementu */
 }

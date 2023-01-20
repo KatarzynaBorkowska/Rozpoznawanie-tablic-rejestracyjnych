@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Powrót</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body>
-    <div class="szklo" class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Powrót</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="szklo">
+      <div>
+        <img
+          src="{{ url_for('static', filename= 'test.png')}}"
+          alt="uploaded image"
+          id="samochod2"
+        />
+        <br />
+        <p3>Nazwa przesłanego pliku: {{ file_name }}</p3>
+      </div>
 
-        <div class="left-half">
-
-
-        <div class = "samochod2">
-            <img src="{{ url_for('static', filename= 'test.png')}}" alt="uploaded image">
-        </div>
-        <div>
-            <p3>Nazwa przesłanego pliku: {{ file_name }}</p3>
-        </div>
-</div>
-
-        <div class="right-half">
-            <div class="rejestracja">
-                <img src="/static/image.jpg">
-            </div>
-
-            {{text}}
-        </div>
-                <form action="/" method="GET">
-    <input type="submit" class="strona2" value="Wróć do strony głównej">
-</form>
+      <div id="right-section2">
+        <img src="/static/image.jpg" id="rejstracja" />
+        <p4>Odczytany numer rejestracyjny:<br /><br />{{text}}</p4>
+      </div>
+      <form action="/" method="GET">
+        <input
+          type="submit"
+          class="przyciskNaStronie2"
+          value="Wróć do strony głównej"
+        />
+      </form>
     </div>
-
-    </body>
+  </body>
 </html>
