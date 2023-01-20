@@ -89,7 +89,7 @@ def index_post():
     # Skopiuj plik przed zmianą jego nazwy
     shutil.copy(path, '../pythonProject/static/test.png')
     # Wyrenderuj szablon z przyciskiem powrotu
-    return render_template('return.html', text = text,image_name='test.png')
+    return render_template('return.html', text = text,image_name='test.png', file_name=form_data+".png")
 
 
 
