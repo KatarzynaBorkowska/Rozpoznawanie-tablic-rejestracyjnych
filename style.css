@@ -227,20 +227,6 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 10px;
 }
 
-#samochod2 {
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  transform: translate(50%, -50%);
-  width: 40%;
-  max-width: 100%; /* ustawienie maksymalnej szerokości */
-  border: solid 1px #ccc; /* dodanie obramowania */
-  padding: 10px; /* dodanie odstępu wewnątrz elementu */
-  display: flex; /* wyśrodkowanie elementu */
-  justify-content: center; /* wyśrodkowanie elementu */
-  left: -150px;
-}
-
 #left-section2 {
   text-align: center; /* wyśrodkowanie elementów wewnątrz diva */
   width: 0px; /* ustawienie szerokości diva */
@@ -250,6 +236,20 @@ input[type="file"]::-webkit-file-upload-button {
 #right-section2 {
   float: right;
   width: 50%;
+}
+
+#samochod2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 100%; /* ustawienie maksymalnej szerokości */
+  border: solid 1px #ccc; /* dodanie obramowania */
+  padding: 10px; /* dodanie odstępu wewnątrz elementu */
+  display: flex; /* wyśrodkowanie elementu */
+  justify-content: center; /* wyśrodkowanie elementu */
+  left: 300px;
 }
 
 #rejstracja {
@@ -263,7 +263,7 @@ input[type="file"]::-webkit-file-upload-button {
   padding: 10px; /* dodanie odstępu wewnątrz elementu */
   display: flex; /* wyśrodkowanie elementu */
   justify-content: center; /* wyśrodkowanie elementu */
-  left: 425px;
+  right: 300px;
 }
 
 p4 {
@@ -271,4 +271,5 @@ p4 {
   padding: 10px; /* dodanie odstępu wewnątrz elementu */
   display: flex; /* wyśrodkowanie elementu */
   justify-content: center; /* wyśrodkowanie elementu */
+  transform: translate(30px, 50px);
 }
