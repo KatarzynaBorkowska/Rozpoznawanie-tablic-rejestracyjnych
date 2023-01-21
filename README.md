@@ -8,6 +8,7 @@ Projekt przedstawia stronę webową, która ze zdjęcia przedstawiającego samoc
 
 W projekcie wykorzystałam takie narzędzia jak Python, Machine Learning, framework Flask oraz między innymi biblioteki keras, tensorflow, cv2. Używam także HTML, CSS oraz JavaScript.
 
+# Przedstawienie projektu
 Strona startowa - mamy na niej możliwość wyboru pliku z komputera, albo skorzystania z przykładowych zdjęć wybieranych z listy
 ![Zrzut ekranu 2023-01-20 o 23 02 44](https://user-images.githubusercontent.com/71874062/213813244-fc16c9a7-a9c1-497b-8604-33fd381c8197.jpg)
 
