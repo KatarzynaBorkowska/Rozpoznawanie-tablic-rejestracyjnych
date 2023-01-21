@@ -1,8 +1,5 @@
-import os
 import shutil
-
 from flask import Flask, request, render_template
-from glob import glob
 from keras.utils import img_to_array
 import cv2
 import tensorflow as tf
@@ -57,16 +54,14 @@ def upload_file():
     file = request.files['file']
     file.save('../pythonProject/static/test.png')
     path = '../pythonProject/static/test.png'
-    path2 = glob(path)
-    print(path2)
-    for path in path2:
-        image, cods = object_detection(path)
-        img = np.array(tf.keras.utils.load_img(path))
-        xmin, xmax, ymin, ymax = cods[0]
-        roi = img[ymin:ymax, xmin:xmax]
 
-        text = pt.image_to_string(roi)
-        imsave('static/image.jpg', roi)
+    image, cods = object_detection(path)
+    img = np.array(tf.keras.utils.load_img(path))
+    xmin, xmax, ymin, ymax = cods[0]
+    roi = img[ymin:ymax, xmin:xmax]
+
+    text = pt.image_to_string(roi)
+    imsave('static/image.jpg', roi)
 
     # Wyrenderuj szablon z przyciskiem powrotu
     return render_template('return.html', text=text, file_name=file.filename)
@@ -76,16 +71,15 @@ def index_post():
     # Pobierz dane przesłane z formularza
     form_data = request.form['samochod']
     path = f'../pythonProject/static/{form_data}.png'
-    path2 = glob(path)
-    print(path2)
-    for path in path2:
-        image, cods = object_detection(path)
-        img = np.array(tf.keras.utils.load_img(path))
-        xmin, xmax, ymin, ymax = cods[0]
-        roi = img[ymin:ymax, xmin:xmax]
 
-        text = pt.image_to_string(roi)
-        imsave('static/image.jpg', roi)
+    image, cods = object_detection(path)
+    img = np.array(tf.keras.utils.load_img(path))
+    xmin, xmax, ymin, ymax = cods[0]
+    roi = img[ymin:ymax, xmin:xmax]
+
+    text = pt.image_to_string(roi)
+    imsave('static/image.jpg', roi)
+
     # Skopiuj plik przed zmianą jego nazwy
     shutil.copy(path, '../pythonProject/static/test.png')
     # Wyrenderuj szablon z przyciskiem powrotu

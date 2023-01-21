@@ -93,7 +93,7 @@ model.compile(loss='mse',optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4))
 model.summary()
 
 tfb = tf.keras.callbacks.TensorBoard('object_detection')
-history = model.fit(x=x_train,y=y_train,batch_size=10,epochs=175,
+history = model.fit(x=x_train,y=y_train,batch_size=10,epochs=150,
                     validation_data=(x_test,y_test),callbacks=[tfb])
 
 model.save('./object_detection.h5')
