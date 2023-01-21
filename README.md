@@ -2,7 +2,7 @@
 
 Projekt przedstawia stronę webową, która ze zdjęcia przedstawiającego samochód znajduje rejestracje, a także ma możliwość wypisania jej w postaci tekstowej.
 
-#Technologie
+# Technologie
 W projekcie wykorzystałam takie narzędzia jak Python, Machine Learning, framework Flask oraz między innymi biblioteki cv2, keras, tensorflow. Używam także HTML, CSS oraz JavaScript.
 
 Strona startowa - mamy na niej możliwość wyboru pliku z komputera, albo skorzystania z przykładowych zdjęć wybieranych z listy
