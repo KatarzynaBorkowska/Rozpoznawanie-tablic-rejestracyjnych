@@ -8,7 +8,6 @@ import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-
 path = glob('../pythonProject/archive/annotations/*.xml')
 labels_dict = dict(filepath=[], xmin=[], xmax=[], ymin=[], ymax=[])
 
@@ -18,6 +17,7 @@ for filename in path:
     root = info.getroot()
     member_object = root.find('object')
     labels_info = member_object.find('bndbox')
+
     xmin = int(labels_info.find('xmin').text)
     xmax = int(labels_info.find('xmax').text)
     ymin = int(labels_info.find('ymin').text)
@@ -49,6 +49,7 @@ image_path = list(df['filepath'].apply(getFilename))
 labels = df.iloc[:, 1:].values
 data = []
 output = []
+
 for ind in range(len(image_path)):
     image = image_path[ind]
     img_arr = cv2.imread(image)

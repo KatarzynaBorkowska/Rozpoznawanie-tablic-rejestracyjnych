@@ -11,8 +11,6 @@ app = Flask(__name__)
 
 model = tf.keras.models.load_model('./object_detection_10_150.h5')
 
-
-
 def object_detection(path):
 
     image = tf.keras.utils.load_img(path)

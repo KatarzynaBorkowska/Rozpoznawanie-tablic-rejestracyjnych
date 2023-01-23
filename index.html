@@ -1,112 +1,141 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <title>Strona główna</title>
-    </head>
-    <body>
-
-    <div class = "bg">
-        <img src="{{ url_for('static', filename= 'car.png')}}" alt="uploaded image" class="bg__img" width="400" height="300">
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Strona główna</title>
+  </head>
+  <body>
+    <div class="bg">
+      <img
+        src="{{ url_for('static', filename= 'car.png')}}"
+        alt="uploaded image"
+        class="bg__img"
+        width="400"
+        height="300"
+      />
     </div>
     <div class="szklo">
+      <h1>Rozpoznawanie rejestracji ze zdjecia</h1>
 
-        <h1>Rozpoznawanie rejestracji ze zdjecia</h1>
-
-
-        <main>
-
-        </main>
-    <div id = "left-section">
+      <div id="left-section">
         <p1>
-        <form action="/zdjecie_z_komputera" method="post" enctype="multipart/form-data">
-            <label class="komputera">Tutaj możesz umieścić plik z komputera</label><br>
-          <input type="file" name="file">
-          <button type="submit" class="myButton">Wyślij</button>
-        </form>
+          <form
+            action="/zdjecie_z_komputera"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <label class="komputera"
+              >Tutaj możesz umieścić plik z komputera</label
+            ><br />
+            <input type="file" name="file" />
+            <button type="submit" class="myButton">Wyślij</button>
+          </form>
         </p1>
-<br>
+        <br />
         <form action="/zdjecie_z_systemu" method="POST">
-          <label for="mySelect" class="komputera">Wybierz samochód do odczytania z pliku:</label><br>
+          <label for="mySelect" class="komputera"
+            >Wybierz samochód do odczytania z pliku:</label
+          ><br />
           <select name="samochod" id="mySelect">
-              <option value="Puste pole">Puste pole</option>
-              <option value="zdjecie_1" data-image="{{ url_for('static', filename='zdjecie_1.png') }}">Zdjęcie 1</option>
-              <option value="zdjecie_2" data-image="{{ url_for('static', filename='zdjecie_2.png') }}">Zdjęcie 2</option>
-              <option value="zdjecie_3" data-image="{{ url_for('static', filename='zdjecie_3.png') }}">Zdjęcie 3</option>
+            <option value="Puste pole">Puste pole</option>
+            <option
+              value="zdjecie_1"
+              data-image="{{ url_for('static', filename='zdjecie_1.png') }}"
+            >
+              Zdjęcie 1
+            </option>
+            <option
+              value="zdjecie_2"
+              data-image="{{ url_for('static', filename='zdjecie_2.png') }}"
+            >
+              Zdjęcie 2
+            </option>
+            <option
+              value="zdjecie_3"
+              data-image="{{ url_for('static', filename='zdjecie_3.png') }}"
+            >
+              Zdjęcie 3
+            </option>
           </select>
 
-            <button type="submit" class="myButton2">Wyślij</button>
-            </form>
-    </div>
-        </main>
-    <div>
-<script>
-    var myButton = document.querySelector(".myButton");
-    myButton.addEventListener("click", function(event){
-        var fileInput = document.querySelector("input[type='file']");
-        if(fileInput.files.length == 0){
-            event.preventDefault();
-            alert("Wybierz plik z komputera!");
-        }
-    });
-</script>
-<script>
-    var myButton = document.querySelector(".myButton2");
-    myButton.addEventListener("click", function(event){
-        var select = document.getElementById("mySelect");
-        var selectedOption = select.options[select.selectedIndex];
-        if(selectedOption.value == "Puste pole"){
-            event.preventDefault();
-            alert("Wybierz samochód z listy!");
-        }
-    });
-</script>
+          <button type="submit" class="myButton2">Wyślij</button>
+        </form>
+      </div>
+
+        <script>
+            var myButton = document.querySelector(".myButton");
+            myButton.addEventListener("click", function(event){
+                var fileInput = document.querySelector("input[type='file']");
+                if(fileInput.files.length == 0){
+                    event.preventDefault();
+                    alert("Wybierz plik z komputera!");
+                }
+            });
+        </script>
+
+        <script>
+            var myButton = document.querySelector(".myButton2");
+            myButton.addEventListener("click", function(event){
+                var select = document.getElementById("mySelect");
+                var selectedOption = select.options[select.selectedIndex];
+                if(selectedOption.value == "Puste pole"){
+                    event.preventDefault();
+                    alert("Wybierz samochód z listy!");
+                }
+            });
+        </script>
+
         <div id = "right-section">
-    <script>
-        // Pobierz element select
-          var select = document.getElementById("mySelect");
+            <script>
+                // Pobierz element select
+                  var select = document.getElementById("mySelect");
 
-          // Zdefiniuj funkcję, która będzie wywoływana po każdym zmianie wyboru
-          select.onchange = function() {
-            // Pobierz istniejący element obrazka
-            const obrazek = document.getElementById('obrazek');
+                  // Zdefiniuj funkcję, która będzie wywoływana po każdym zmianie wyboru
+                  select.onchange = function() {
+                    // Pobierz istniejący element obrazka
+                    const obrazek = document.getElementById('obrazek');
 
-            // Jeśli element obrazka istnieje, usuń go ze strony
-            if (obrazek) {
-              obrazek.parentNode.removeChild(obrazek);
-            }
+                    // Jeśli element obrazka istnieje, usuń go ze strony
+                    if (obrazek) {
+                      obrazek.parentNode.removeChild(obrazek);
+                    }
 
-            // Pobierz wybraną opcję
-            var selectedOption = this.options[select.selectedIndex];
+                    // Pobierz wybraną opcję
+                    var selectedOption = this.options[select.selectedIndex];
 
-            // Pobierz atrybut data-image dla wybranej opcji
-            var imageUrl = selectedOption.getAttribute("data-image");
+                    // Pobierz atrybut data-image dla wybranej opcji
+                    var imageUrl = selectedOption.getAttribute("data-image");
 
-            // Twórz element img z odpowiednim atrybutem src
-            var img = document.createElement("img");
-            img.src = imageUrl;
-            img.id = "obrazek";
+                    // Twórz element img z odpowiednim atrybutem src
+                    var img = document.createElement("img");
+                    img.src = imageUrl;
+                    img.id = "obrazek";
 
-            // Umieść obraz na stronie
-            if (selectedOption.value != "Puste pole") {
-                // Twórz element img z odpowiednim atrybutem src
-                var img = document.createElement("img");
-                img.src = imageUrl;
-                img.id = "obrazek";
+                    // Umieść obraz na stronie
+                    if (selectedOption.value != "Puste pole") {
+                        // Twórz element img z odpowiednim atrybutem src
+                        var img = document.createElement("img");
+                        img.src = imageUrl;
+                        img.id = "obrazek";
 
-                // Umieść obraz na stronie
-                document.querySelector('.szklo').appendChild(img);
-            }
-          }
-    </script>
-            </div>
-</div>
-</div>
-    </body>
+                        // Umieść obraz na stronie
+                        document.querySelector('.szklo').appendChild(img);
+                    }
+                  }
+            </script>
+        </div>
+    </div>
+  </body>
 </html>
